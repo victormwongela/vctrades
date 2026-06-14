@@ -1,104 +1,153 @@
-import { useState } from "react";
+import { FaEnvelope, FaPhone, FaMapMarkerAlt } from "react-icons/fa";
 
-export default function Contact() {
-
-  const [form, setForm] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
-  });
-
-  const handleSubmit = (
-    e: React.FormEvent
-  ) => {
-    e.preventDefault();
-
-    console.log(form);
-
-    alert("Message sent successfully");
-
-    setForm({
-      name: "",
-      email: "",
-      subject: "",
-      message: "",
-    });
-  };
-
+const Contact = () => {
   return (
-    <section className="max-w-3xl mx-auto py-20">
+    <div className="bg-slate-950 text-white min-h-screen py-24">
 
-      <h1 className="text-4xl font-bold mb-8">
-        Contact Us
-      </h1>
+      <div className="max-w-7xl mx-auto px-6">
 
-      <form
-        onSubmit={handleSubmit}
-        className="space-y-4"
-      >
+        <div className="text-center mb-16">
 
-        <input
-          type="text"
-          placeholder="Full Name"
-          value={form.name}
-          onChange={(e) =>
-            setForm({
-              ...form,
-              name: e.target.value,
-            })
-          }
-          className="w-full p-4 rounded"
-        />
+          <h1 className="text-6xl font-bold">
+            Contact Us
+          </h1>
 
-        <input
-          type="email"
-          placeholder="Email"
-          value={form.email}
-          onChange={(e) =>
-            setForm({
-              ...form,
-              email: e.target.value,
-            })
-          }
-          className="w-full p-4 rounded"
-        />
+          <p className="text-slate-400 mt-4">
+            Our team is available 24/7.
+          </p>
 
-        <input
-          type="text"
-          placeholder="Subject"
-          value={form.subject}
-          onChange={(e) =>
-            setForm({
-              ...form,
-              subject: e.target.value,
-            })
-          }
-          className="w-full p-4 rounded"
-        />
+        </div>
 
-        <textarea
-          rows={5}
-          placeholder="Message"
-          value={form.message}
-          onChange={(e) =>
-            setForm({
-              ...form,
-              message: e.target.value,
-            })
-          }
-          className="w-full p-4 rounded"
-        />
+        <div className="grid lg:grid-cols-2 gap-10">
 
-        <button
-          type="submit"
-          className="bg-blue-600 px-8 py-3 rounded"
-        >
-          Send Message
-        </button>
+          {/* Contact Form */}
 
-      </form>
+          <div className="bg-slate-900 p-8 rounded-3xl">
 
-    </section>
+            <h2 className="text-3xl font-bold mb-8">
+              Send Message
+            </h2>
+
+            <form className="space-y-6">
+
+              <input
+                type="text"
+                placeholder="Full Name"
+                className="
+                  w-full
+                  p-4
+                  rounded-xl
+                  bg-slate-800
+                "
+              />
+
+              <input
+                type="email"
+                placeholder="Email Address"
+                className="
+                  w-full
+                  p-4
+                  rounded-xl
+                  bg-slate-800
+                "
+              />
+
+              <input
+                type="text"
+                placeholder="Subject"
+                className="
+                  w-full
+                  p-4
+                  rounded-xl
+                  bg-slate-800
+                "
+              />
+
+              <textarea
+                rows={6}
+                placeholder="Message"
+                className="
+                  w-full
+                  p-4
+                  rounded-xl
+                  bg-slate-800
+                "
+              />
+
+              <button
+                type="submit"
+                className="
+                  w-full
+                  bg-blue-600
+                  hover:bg-blue-700
+                  py-4
+                  rounded-xl
+                "
+              >
+                Send Message
+              </button>
+
+            </form>
+
+          </div>
+
+          {/* Contact Details */}
+
+          <div className="space-y-6">
+
+            <div className="bg-slate-900 p-6 rounded-3xl flex gap-4">
+              <FaEnvelope
+                size={25}
+                className="text-blue-500"
+              />
+              <div>
+                <h3 className="font-bold">
+                  Email
+                </h3>
+                <p className="text-slate-400">
+                  support@vtrades.com
+                </p>
+              </div>
+            </div>
+
+            <div className="bg-slate-900 p-6 rounded-3xl flex gap-4">
+              <FaPhone
+                size={25}
+                className="text-blue-500"
+              />
+              <div>
+                <h3 className="font-bold">
+                  Phone
+                </h3>
+                <p className="text-slate-400">
+                  +254 793818322
+                </p>
+              </div>
+            </div>
+
+            <div className="bg-slate-900 p-6 rounded-3xl flex gap-4">
+              <FaMapMarkerAlt
+                size={25}
+                className="text-blue-500"
+              />
+              <div>
+                <h3 className="font-bold">
+                  Office
+                </h3>
+                <p className="text-slate-400">
+                  Nairobi, Kenya
+                </p>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
   );
-}
+};
+
+export default Contact;

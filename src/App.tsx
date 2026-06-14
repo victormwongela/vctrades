@@ -1,15 +1,19 @@
-import { Routes, Route } from "react-router-dom";
-import MainLayout from "./layouts/MainLayout";
-import Home from "./pages/public/Home";
+import Navbar from "./components/layout/Navbar";
+import Footer from "./components/layout/Footer";
+import AppRoutes from "./routes/AppRoutes";
 
-
-
-export default function AppRoutes() {
+function App() {
   return (
-    <Routes>
-      <Route element={<MainLayout />}>
-        <Route path="/" element={<Home />} />
-      </Route>
-    </Routes>
+    <div className="bg-slate-950 text-white min-h-screen">
+
+      <Navbar />
+
+      <AppRoutes />
+
+      <Footer />
+
+    </div>
   );
 }
+
+export default App;

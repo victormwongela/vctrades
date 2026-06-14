@@ -1,22 +1,45 @@
-import Button from "../common/Button";
+import { Link } from "react-router-dom";
 
 const CTA = () => {
   return (
-    <section className="bg-blue-600 py-24 text-white">
+    <section className="py-24">
 
-      <div className="max-w-4xl mx-auto text-center px-6">
+      <div className="max-w-6xl mx-auto px-6">
 
-        <h2 className="text-5xl font-bold mb-6">
-          Start Trading Today
-        </h2>
+        <div className="
+          bg-gradient-to-r
+          from-blue-700
+          to-purple-700
+          rounded-3xl
+          p-16
+          text-center
+        ">
 
-        <p className="mb-8">
-          Join our growing community of traders.
-        </p>
+          <h2 className="text-5xl font-bold">
+            Start Trading Today
+          </h2>
 
-        <Button className="bg-white text-black hover:bg-gray-200">
-          Create Account
-        </Button>
+          <p className="mt-6 text-xl">
+            Join thousands of investors already growing their wealth.
+          </p>
+
+          <Link
+            to="/register"
+            className="
+              inline-block
+              mt-8
+              bg-white
+              text-black
+              px-8
+              py-4
+              rounded-xl
+              font-bold
+            "
+          >
+            Create Account
+          </Link>
+
+        </div>
 
       </div>
 
